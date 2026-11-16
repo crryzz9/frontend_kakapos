@@ -1,45 +1,16 @@
-# E-commerce Full Stack sobre merch de kakapos 🦜
+# React + Vite
 
-Frontend de un e-commerce de merchandising de kakapos.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Tecnologías
+Currently, two official plugins are available:
 
-* React
-* JavaScript
-* Docker
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Ejecución
+## React Compiler
 
-### 1. Clonar el repositorio
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-```bash
-git clone https://github.com/crryzz9/frontend_kakapos.git
-```
+## Expanding the ESLint configuration
 
-### 2. Entrar en la carpeta del proyecto
-
-```bash
-cd frontend_kakapos
-```
-
-### 3. Instalar las dependencias
-
-```bash
-npm install
-```
-
-### 4. Ejecutar el proyecto
-
-```bash
-npm run dev
-```
-
-El proyecto estará disponible en la dirección que indique la terminal, normalmente:
-
-```text
-http://localhost:5173
-```
-
-## Autor
-
-Victor Reig Herrera
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

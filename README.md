@@ -1,16 +1,67 @@
-# React + Vite
+# Kakapos Shop – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Parte visual de la tienda online de merchandising **Kakapos**, hecha con React. Forma parte de la práctica de e-commerce del módulo *Desarrollo Web Full Stack (React, Node, Mongo)*.
 
-Currently, two official plugins are available:
+El backend (API REST con Node, Express y MongoDB) está en otro repositorio: `backend`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologías
 
-## React Compiler
+- React 19
+- Vite
+- React Router (`react-router-dom`)
+- Tailwind CSS
+- ESLint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Requisitos
 
-## Expanding the ESLint configuration
+- Node.js 22 o superior
+- npm
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instalación y ejecución
+
+```bash
+npm install
+npm run dev
+```
+
+La aplicación se abre en `http://localhost:5173/`.
+
+Otros comandos útiles:
+
+| Comando | Descripción |
+|---|---|
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Genera la versión de producción en `dist/` |
+| `npm run lint` | Revisa el código con ESLint |
+
+## Rutas
+
+| Ruta | Página |
+|---|---|
+| `/` | Home: productos principales de la tienda |
+| `/login` | Formulario de inicio de sesión |
+| `/register` | Formulario de registro |
+| `*` | Página «no encontrada» |
+
+## Estructura
+
+```
+src/
+├── main.jsx        # Punto de entrada y configuración de las rutas
+├── App.jsx         # Estructura común: menú de navegación y <Outlet />
+├── index.css       # Importa Tailwind
+└── pages/
+    ├── Home.jsx
+    ├── Login.jsx
+    └── Register.jsx
+```
+
+## Estado actual
+
+- Navegación entre páginas con React Router (menú con enlace activo resaltado).
+- Home con una lista de productos de ejemplo escrita a mano.
+- Formularios de login y registro todavía sin lógica: aún no están conectados con la API.
+
+## Autor
+
+Victor Reig Herrera – [crryzz9](https://github.com/crryzz9)

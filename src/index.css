@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+/* Paleta del plumaje del kākāpō. Ratios WCAG comprobados:
+   sobre claro: ink/paper 12,97, moss/paper 6,54, moss/bone 7,30, ink/accent 8,41
+   sobre oscuro: bone/ink 14,47, bone/ink2 12,12, lichen-light/ink 6,68, lichen-light/ink2 5,60, accent/ink2 7,04
+   solo decorativos: lichen (2,86 sobre paper, 3,80 sobre ink2), accent sobre claro (1,54) */
+@theme {
+  --color-ink: #1E2512;
+  --color-ink2: #2A3319;
+  --color-moss: #4A5530;
+  --color-lichen: #7B9154;
+  --color-lichen-light: #9DB070;
+  --color-paper: #E8EBD0;
+  --color-bone: #F5F6E8;
+  --color-accent: #E0B93B;
+
+  --font-sans: "Plus Jakarta Sans Variable", system-ui, sans-serif;
+}
+
+@layer base {
+  /* Anillo de foco: ink sobre claro; en .zona-fosca pasa a accent */
+  :root {
+    --focus: var(--color-ink);
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  /* Zonas oscuras (fondo ink o ink2): el foco pasa a accent */
+  .zona-fosca {
+    --focus: var(--color-accent);
+  }
+}
+
+@layer components {
+  /* Envoltorio de cada letra del gran «Kakapos» (.k-lw del prototipo).
+     overflow:hidden recorta la letra cuando sube desde abajo en la animación;
+     el padding generoso evita cortar ascendentes y la cola de la «p», y los
+     márgenes negativos compensan ese padding para que la palabra no se separe. */
+  .lletra-caixa {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    letter-spacing: 0;
+    padding: 0.24em 0.12em 0.2em 0.12em;
+    margin: -0.24em -0.18em -0.2em -0.12em;
+  }
+}
